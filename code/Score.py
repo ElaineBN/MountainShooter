@@ -8,8 +8,8 @@ from pygame.font import Font
 from code.Const import C_YELLOW, SCORE_POS, MENU_OPTION, C_WHITE
 from code.DBProxy import DBProxy
 
-class Score:
 
+class Score:
     def __init__(self, window: Surface):
         self.window = window
         self.surf = pygame.image.load('./asset/ScoreBg.png').convert_alpha()
@@ -38,6 +38,7 @@ class Score:
                     score = player_score[1]
                     text = 'Enter Player 2 name (4 characters):'
             self.score_text(20, text, C_WHITE, SCORE_POS['EnterName'])
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -68,7 +69,7 @@ class Score:
 
         for player_score in list_score:
             id_, name, score, date = player_score
-            self.score_text(20, f'{name}     {score:05d}     {date}', C_YELLOW,
+            self.score_text(20, f'{name}     {score:05f}     {date}', C_YELLOW,
                             SCORE_POS[list_score.index(player_score)])
         while True:
             for event in pygame.event.get():

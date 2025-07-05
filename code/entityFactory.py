@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import random
 
-from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.background import Background
+from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.enemy import Enemy
 from code.player import Player
 
@@ -15,18 +15,18 @@ class EntityFactory:
         match entity_name:
             case 'Level1Bg':
                 list_bg = []
-                for i in range(7): # Level1bg images number
-                    list_bg.append(Background(f'Level1Bg{i}', (0,0)))
-                    list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH,0)))
+                for i in range(7):  # level1bg images number
+                    list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
+                    list_bg.append(Background(f'Level1Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
             case 'Level2Bg':
                 list_bg = []
-                for i in range(5): # Level2bg images number
+                for i in range(5):  # level2bg images number
                     list_bg.append(Background(f'Level2Bg{i}', (0, 0)))
                     list_bg.append(Background(f'Level2Bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
             case 'Player1':
-                return Player('Player1', (10, WIN_HEIGHT / 2 -30))
+                return Player('Player1', (10, WIN_HEIGHT / 2 - 30))
             case 'Player2':
                 return Player('Player2', (10, WIN_HEIGHT / 2 + 30))
             case 'Enemy1':

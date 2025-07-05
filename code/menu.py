@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
 import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
@@ -20,8 +21,8 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, 'Mountain', C_ORANGE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(50, 'Shooter', C_ORANGE, ((WIN_WIDTH / 2), 120))
+            self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
@@ -29,19 +30,19 @@ class Menu:
                 else:
                     self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip()
-            
+
             # Check for all events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()  # Close Window
                     quit()  # end pygame
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN: # DOWN KEY
+                    if event.key == pygame.K_DOWN:  # DOWN KEY
                         if menu_option < len(MENU_OPTION) - 1:
                             menu_option += 1
                         else:
                             menu_option = 0
-                    if event.key == pygame.K_UP: # UP KEY
+                    if event.key == pygame.K_UP:  # UP KEY
                         if menu_option > 0:
                             menu_option -= 1
                         else:
