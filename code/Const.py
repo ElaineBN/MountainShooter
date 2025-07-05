@@ -80,7 +80,6 @@ ENTITY_SCORE = {
     'Enemy2Shot': 0,
 }
 
-
 ENTITY_HEALTH = {
     'Level1Bg0': 999,
     'Level1Bg1': 999,
